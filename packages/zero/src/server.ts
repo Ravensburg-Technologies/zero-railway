@@ -2,7 +2,6 @@ import express from "express";
 import { exec } from "node:child_process";
 
 const app = express();
-
 app.get("/run-migration", (req, res) => {
 	exec("bunx zero-deploy-permissions -p schema.ts", (error, stdout, stderr) => {
 		if (error) {

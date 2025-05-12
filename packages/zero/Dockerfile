@@ -11,5 +11,4 @@ COPY --from=buninstall /app/node_modules node_modules
 COPY --from=buninstall /app/bun.lock bun.lock
 COPY --from=buninstall /app/package.json package.json
 COPY --from=buninstall /app/src src
-COPY --from=buninstall /app/tsconfig.json tsconfig.json
 COPY --from=buninstall /app/litestream.yml litestream.yml

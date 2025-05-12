@@ -1,5 +1,5 @@
 FROM rocicorp/zero:0.19.2025050203
 COPY litestream.yml /etc/litestream.yml
-COPY src/schema.ts schema.ts
+COPY . .
 #ENV LITESTREAM_ACCESS_KEY_ID=
 #ENV LITESTREAM_SECRET_ACCESS_KEY=

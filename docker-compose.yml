@@ -1,0 +1,20 @@
+services:
+    postgres:
+        image: postgres:16
+        ports:
+            - "5898:5432" # expose pg on port 5832 to not collide with pg from elswhere
+        restart: always
+        volumes:
+            - db_data:/var/lib/postgresql/data
+        environment:
+            POSTGRES_DB: postgres
+            POSTGRES_PASSWORD: postgres
+        # postgresql://postgres:postgres@localhost:5898/postgres
+        command: |
+            -c wal_level=logical
+            -c max_wal_senders=10
+            -c max_replication_slots=5
+            -c hot_standby=on
+            -c hot_standby_feedback=on
+volumes:
+    db_data:

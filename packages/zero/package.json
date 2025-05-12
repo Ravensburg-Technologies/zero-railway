@@ -1,0 +1,7 @@
+{
+	"name": "@repo/zero",
+	"type": "module",
+	"dependencies": {
+		"@rocicorp/zero": "0.19.2025050203"
+	}
+}

@@ -45,6 +45,10 @@
       "name": "@repo/zero",
       "dependencies": {
         "@rocicorp/zero": "0.19.2025050203",
+        "express": "^5.1.0",
+      },
+      "devDependencies": {
+        "@types/express": "^5.0.1",
       },
     },
   },

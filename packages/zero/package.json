@@ -1,6 +1,9 @@
 {
 	"name": "@repo/zero",
 	"type": "module",
+	"scripts": {
+		"start": "bun run src/server.ts"
+	},
 	"dependencies": {
 		"@rocicorp/zero": "0.19.2025050203",
 		"express": "^5.1.0"

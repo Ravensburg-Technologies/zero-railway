@@ -5,7 +5,7 @@ dbs:
     watermark-table: _zero.replicationState
     watermark-column: stateVersion
     replicas:
-      - url: ${ZERO_S3_BACKUP_URL}
+      - url: s3://backup
         endpoint: ${ZERO_MINIO_ENDPOINT}
         region: us-east-1
         type: s3

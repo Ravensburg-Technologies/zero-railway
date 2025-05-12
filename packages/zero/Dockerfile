@@ -2,6 +2,9 @@
 FROM oven/bun:1 AS buninstall
 WORKDIR /app
 COPY . .
+RUN bun pm trust --all || true
+RUN bun install
+RUN bun pm trust --all || true
 RUN bun install
 RUN ls -al
 

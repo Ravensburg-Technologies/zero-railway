@@ -1,17 +1,18 @@
 {
-  "workspaces": ["apps/*", "packages/*"],
-  "name": "@repo/zero-railway",
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "5.8.3"
-  },
-  "trustedDependencies": [
-    "@biomejs/biome",
-    "@rocicorp/zero-sqlite3",
-    "esbuild",
-    "protobufjs"
-  ]
+	"workspaces": ["apps/*", "packages/*"],
+	"name": "@repo/zero-railway",
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "5.8.3"
+	},
+	"trustedDependencies": [
+		"@biomejs/biome",
+		"@rocicorp/zero-sqlite3",
+		"esbuild",
+		"protobufjs"
+	]
 }

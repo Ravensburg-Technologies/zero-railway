@@ -8,6 +8,7 @@ dbs:
       - url: ${ZERO_S3_BACKUP_URL}
         endpoint: ${ZERO_MINIO_ENDPOINT}
         region: us-east-1
+        type: s3
         retention: ${ZERO_LITESTREAM_SNAPSHOT_BACKUP_INTERVAL_MINUTES}m
         retention-check-interval: 1h
         sync-interval: ${ZERO_LITESTREAM_INCREMENTAL_BACKUP_INTERVAL_MINUTES}m

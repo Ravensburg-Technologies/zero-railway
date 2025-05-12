@@ -5,7 +5,7 @@ const app = express();
 
 app.get("/run-migration", (req, res) => {
 	exec(
-		"npx zero-deploy-permissions -p packages/zero/src/schema.ts",
+		"bunx zero-deploy-permissions -p packages/zero/src/schema.ts",
 		(error, stdout, stderr) => {
 			if (error) {
 				console.error(`Error: ${error}`);

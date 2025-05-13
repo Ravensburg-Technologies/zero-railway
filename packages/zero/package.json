@@ -1,6 +1,7 @@
 {
 	"name": "@repo/zero",
 	"type": "module",
+	"main": "./src/index.ts",
 	"scripts": {
 		"start": "bun run src/server.ts"
 	},

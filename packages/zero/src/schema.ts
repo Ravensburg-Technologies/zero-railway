@@ -5,7 +5,6 @@ import {
 	createSchema,
 	definePermissions,
 	number,
-	relationships,
 	string,
 	table,
 } from "@rocicorp/zero";
@@ -15,47 +14,19 @@ const post = table("post")
 		id: string(),
 		title: string(),
 		content: string(),
-		authorId: string(),
 		createdAt: number(),
 		updatedAt: number(),
 	})
 	.primaryKey("id");
-
-const author = table("author")
-	.columns({
-		id: string(),
-		name: string(),
-		createdAt: number(),
-		updatedAt: number(),
-	})
-	.primaryKey("id");
-
-// Define relationships
-const postRelationships = relationships(post, ({ one }) => ({
-	author: one({
-		sourceField: ["authorId"],
-		destField: ["id"],
-		destSchema: author,
-	}),
-}));
-
-const authorRelationships = relationships(author, ({ many }) => ({
-	posts: many({
-		sourceField: ["id"],
-		destField: ["authorId"],
-		destSchema: post,
-	}),
-}));
 
 // Create schema
 export const schema = createSchema({
-	tables: [post, author],
-	relationships: [postRelationships, authorRelationships],
+	tables: [post],
+	relationships: [],
 });
 
 export type Schema = typeof schema;
 export type Post = Row<typeof schema.tables.post>;
-export type Author = Row<typeof schema.tables.author>;
 
 // The contents of your decoded JWT.
 type AuthData = {
@@ -65,17 +36,6 @@ type AuthData = {
 export const permissions = definePermissions<AuthData, Schema>(schema, () => {
 	return {
 		post: {
-			row: {
-				select: ANYONE_CAN,
-				insert: ANYONE_CAN,
-				update: {
-					preMutation: ANYONE_CAN,
-					postMutation: ANYONE_CAN,
-				},
-				delete: ANYONE_CAN,
-			},
-		},
-		author: {
 			row: {
 				select: ANYONE_CAN,
 				insert: ANYONE_CAN,

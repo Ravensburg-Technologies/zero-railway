@@ -14,8 +14,8 @@
 # format the Caddyfile with fmt
 [phases.fmt]
     dependsOn = ['caddy'] # make sure this phase runs after the 'caddy' phase so that we know we have caddy downloaded
-    cmds = ['caddy fmt --overwrite Caddyfile'] # format the Caddyfile to fix any formatting inconsistencies
+    cmds = ['caddy fmt --overwrite apps/app/Caddyfile'] # format the Caddyfile to fix any formatting inconsistencies
 
 # start the caddy web server
 [start]
-    cmd = 'exec caddy run --config Caddyfile --adapter caddyfile 2>&1' # start caddy using the Caddyfile config and caddyfile adapter
+    cmd = 'exec caddy run --config apps/app/Caddyfile --adapter caddyfile 2>&1' # start caddy using the Caddyfile config and caddyfile adapter

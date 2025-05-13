@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1747068150679,
-      "tag": "0000_icy_human_robot",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1747155901366,
-      "tag": "0001_flippant_harpoon",
+      "when": 1747156311146,
+      "tag": "0000_chief_scalphunter",
       "breakpoints": true
     }
   ]

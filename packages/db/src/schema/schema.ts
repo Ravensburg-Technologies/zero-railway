@@ -1,11 +1,8 @@
-import { createId } from "@paralleldrive/cuid2";
-import { pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 
 // auth start
 export const post = pgTable("post", {
-	id: text()
-		.primaryKey()
-		.$defaultFn(() => createId()),
+	id: uuid().primaryKey(),
 	createdAt: timestamp().defaultNow().notNull(),
 	updatedAt: timestamp()
 		.notNull()

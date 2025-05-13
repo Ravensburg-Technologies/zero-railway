@@ -9,8 +9,6 @@ const zero = new Zero({
 	server: import.meta.env.VITE_ZERO_URL,
 });
 
-console.log(import.meta.env.VITE_ZERO_URL);
-
 export function ZeroProvider({ children }: { children: React.ReactNode }) {
 	return <ZeroProviderBase zero={zero}>{children}</ZeroProviderBase>;
 }

@@ -43,8 +43,8 @@ function App() {
 
 			<h2>Create Post</h2>
 			<form onSubmit={handleSubmit}>
-				<input type="text" name="title" />
-				<input type="text" name="content" />
+				<input placeholder="Title" type="text" name="title" />
+				<input placeholder="Content" type="text" name="content" />
 				<button type="submit">Create</button>
 			</form>
 		</>

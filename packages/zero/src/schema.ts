@@ -25,7 +25,6 @@ const author = table("author")
 	.columns({
 		id: string(),
 		name: string(),
-		email: string(),
 		createdAt: number(),
 		updatedAt: number(),
 	})

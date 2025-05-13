@@ -1,4 +1,12 @@
-# zero-railway
+# Zero on Railway
+
+This template is the maybe easiest and most cost effective way to deploy [Zero](https://zero.rocicorp.dev).
+
+To start the DB:
+
+```bash
+docker compose up -d
+```
 
 To install dependencies:
 
@@ -6,10 +14,20 @@ To install dependencies:
 bun install
 ```
 
-To run:
+To migrate the DB:
 
 ```bash
-bun run index.ts
+cd packages/db && bun run migrate:dev
 ```
 
-This project was created using `bun init` in bun v1.2.2. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+```bash
+bun run dev
+```
+
+in apps/api, apps/app and packages/zero to run everything locally.
+
+## Prerequisites 
+
+Create a "backup" bucket in min.io by logging into the "console" service. Make sure to name it "backup".
+
+Change the "ZERO_AUTH_SECRET" variable if you're using that (in shared variables).

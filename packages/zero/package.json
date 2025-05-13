@@ -3,13 +3,15 @@
 	"type": "module",
 	"main": "./src/index.ts",
 	"scripts": {
-		"start": "bun run src/server.ts"
+		"start": "bun run src/server.ts",
+		"dev": "dotenv -e ../../.env.development -- zero-cache-dev -p src/schema.ts"
 	},
 	"dependencies": {
 		"@rocicorp/zero": "0.19.2025050203",
 		"express": "^5.1.0"
 	},
 	"devDependencies": {
-		"@types/express": "^5.0.1"
+		"@types/express": "^5.0.1",
+		"dotenv-cli": "8.0.0"
 	}
 }

@@ -98,6 +98,9 @@ web_modules/
 
 .yarn-integrity
 
+# Sqlite
+sync-replica.db*
+
 # dotenv environment variable files
 
 .env

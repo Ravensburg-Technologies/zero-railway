@@ -16,7 +16,8 @@
     dependsOn = ['caddy'] # make sure this phase runs after the 'caddy' phase so that we know we have caddy downloaded
     cmds = ['caddy fmt --overwrite apps/app/Caddyfile'] # format the Caddyfile to fix any formatting inconsistencies
 
-[build]
+[phases.build]
+    dependsOn = ['fmt']
     cmd = 'cd apps/app && bun run build
 
 # start the caddy web server

@@ -25,9 +25,3 @@ bun run dev
 ```
 
 in apps/api, apps/app and packages/zero to run everything locally.
-
-## Prerequisites 
-
-Create a "backup" bucket in min.io by logging into the "console" service. Make sure to name it "backup".
-
-Change the "ZERO_AUTH_SECRET" variable if you're using that (in shared variables).

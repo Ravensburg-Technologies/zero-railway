@@ -18,8 +18,13 @@
 
 [phases.build]
     dependsOn = ['fmt']
-    cmd = 'cd apps/app && bun run build'
+    cmds = [
+        'echo "Starting build phase..."',
+        'cd apps/app && bun run build 2>&1',
+        'echo "Build phase completed."'
+    ]
 
 # start the caddy web server
 [start]
+    dependsOn = ['build']  # ensure build completes before starting Caddy
     cmd = 'exec caddy run --config apps/app/Caddyfile --adapter caddyfile 2>&1' # start caddy using the Caddyfile config and caddyfile adapter

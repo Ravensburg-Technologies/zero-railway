@@ -18,6 +18,7 @@
 
 [build]
     cmd = 'cd apps/app && bun run build
+
 # start the caddy web server
 [start]
     cmd = 'exec caddy run --config apps/app/Caddyfile --adapter caddyfile 2>&1' # start caddy using the Caddyfile config and caddyfile adapter

@@ -8,6 +8,6 @@
 # RUN bun install
 # RUN ls -al
 
-FROM rocicorp/zero:0.19.2025050203
+FROM rocicorp/zero:0.20.2025052100
 COPY litestream.yml /etc/litestream.yml
 # COPY --from=buninstall /app .
